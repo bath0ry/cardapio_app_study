@@ -3,6 +3,8 @@ import 'package:flutter/src/widgets/container.dart';
 import 'package:flutter/src/widgets/framework.dart';
 import 'package:panucci_ristorante/cardapio.dart';
 import 'package:panucci_ristorante/components/order_item.dart';
+import 'package:panucci_ristorante/components/payment_method.dart';
+import 'package:panucci_ristorante/components/payment_total.dart';
 
 class OrderPage extends StatelessWidget {
   const OrderPage({super.key});
@@ -42,7 +44,30 @@ class OrderPage extends StatelessWidget {
                   imageURI: orderItems[index]['image'],
                   itemTitle: orderItems[index]['name'],
                   itemPrice: orderItems[index]['price']);
-            }), childCount: orderItems.length))
+            }), childCount: orderItems.length)),
+            SliverToBoxAdapter(
+              child: Text(
+                'Pagamento',
+                style: TextStyle(fontFamily: 'Caveat', fontSize: 32),
+                textAlign: TextAlign.left,
+              ),
+            ),
+            SliverToBoxAdapter(
+                child: Padding(
+              padding: const EdgeInsets.all(16),
+              child: PaymentMethod(),
+            )),
+            SliverToBoxAdapter(
+                child: Text(
+              'Confirmar',
+              style: TextStyle(fontFamily: 'Caveat', fontSize: 32),
+              textAlign: TextAlign.left,
+            )),
+            SliverToBoxAdapter(
+                child: Padding(
+              padding: const EdgeInsets.all(16),
+              child: PaymentTotal(),
+            )),
           ],
         ),
       ),
