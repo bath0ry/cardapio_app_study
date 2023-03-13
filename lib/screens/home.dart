@@ -3,6 +3,7 @@ import 'package:panucci_ristorante/components/main_drawer.dart';
 import 'package:panucci_ristorante/screens/drinks_page.dart';
 import 'package:panucci_ristorante/screens/highlights.dart';
 import 'package:panucci_ristorante/screens/menu_page.dart';
+import 'package:panucci_ristorante/screens/order_page.dart';
 import 'package:panucci_ristorante/themes/app_colors.dart';
 
 class Home extends StatefulWidget {
@@ -16,7 +17,12 @@ class _HomeState extends State<Home> {
   int _currentPage = 0;
   @override
   Widget build(BuildContext context) {
-    final List<Widget> pages = [HighLights(), MenuPage(), DrinksPage()];
+    final List<Widget> pages = [
+      HighLights(),
+      MenuPage(),
+      DrinksPage(),
+      OrderPage()
+    ];
     return Scaffold(
       appBar: AppBar(
         title: const Text("Ristorante Panucci"),
@@ -35,7 +41,7 @@ class _HomeState extends State<Home> {
       floatingActionButton: FloatingActionButton(
         onPressed: () {
           Navigator.push(context, MaterialPageRoute(builder: (context) {
-            return const Home();
+            return const OrderPage();
           }));
         },
         child: const Icon(Icons.point_of_sale),

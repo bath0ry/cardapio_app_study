@@ -19,11 +19,18 @@ class DrinkItem extends StatelessWidget {
       elevation: 0,
       child: Column(
         children: <Widget>[
-          Image(
-            image: AssetImage(imageURI),
-            fit: BoxFit.cover,
-            height: 91.5,
-            width: double.maxFinite,
+          ConstrainedBox(
+            constraints: BoxConstraints(
+                minHeight: 90,
+                maxHeight: double.infinity,
+                minWidth: 90,
+                maxWidth: double.infinity),
+            child: Image(
+              image: AssetImage(imageURI),
+              fit: BoxFit.cover,
+              height: 91.5,
+              width: double.infinity,
+            ),
           ),
           Padding(
             padding: const EdgeInsets.all(16.0),

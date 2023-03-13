@@ -18,13 +18,15 @@ class _CounterComponentState extends State<CounterComponent> {
           borderRadius: BorderRadius.circular(20),
           onTap: () {
             setState(() {
-              _counter++;
+              if (_counter < 20) {
+                _counter++;
+              }
             });
           },
           child: Container(
             decoration: BoxDecoration(
                 borderRadius: BorderRadius.circular(20),
-            color: AppColors.counterButtonColor),
+                color: AppColors.counterButtonColor),
             child: const Icon(Icons.arrow_drop_up),
           ),
         ),
@@ -33,13 +35,15 @@ class _CounterComponentState extends State<CounterComponent> {
           borderRadius: BorderRadius.circular(20),
           onTap: () {
             setState(() {
-              _counter--;
+              if (_counter > 0) {
+                _counter--;
+              }
             });
           },
           child: Container(
             decoration: BoxDecoration(
                 borderRadius: BorderRadius.circular(20),
-            color: AppColors.counterButtonColor),
+                color: AppColors.counterButtonColor),
             child: const Icon(Icons.arrow_drop_down),
           ),
         ),
@@ -47,4 +51,3 @@ class _CounterComponentState extends State<CounterComponent> {
     );
   }
 }
-

@@ -26,7 +26,10 @@ class DrinksPage extends StatelessWidget {
           ),
           SliverGrid(
               gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
-                  crossAxisCount: 2),
+                  crossAxisCount: 2,
+                  crossAxisSpacing: 8,
+                  mainAxisSpacing: 8,
+                  childAspectRatio: 158 / 194),
               delegate: SliverChildBuilderDelegate((context, index) {
                 return DrinkItem(
                     imageURI: drinksItem[index]['image'],

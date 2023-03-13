@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:panucci_ristorante/screens/order_page.dart';
 
 import '../screens/home.dart';
 import '../themes/app_colors.dart';
@@ -55,7 +56,11 @@ class MainDrawer extends StatelessWidget {
             ListTile(
               iconColor: AppColors.drawerIconColor,
               textColor: AppColors.drawerFontColor,
-              onTap: () {},
+              onTap: () {
+                Navigator.push(context, MaterialPageRoute(builder: ((context) {
+                  return const Home();
+                })));
+              },
               title: Row(
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: const <Widget>[
